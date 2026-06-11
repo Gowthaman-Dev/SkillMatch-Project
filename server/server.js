@@ -9,7 +9,7 @@ import authRoute from "./routes/authRoute.js";
 import jobRoute from "./routes/jobRoute.js";
 import applicationRoute from "./routes/applicationRoute.js";
 import profileRoute from "./routes/profileRoute.js";
-
+  
 dotenv.config();
 connectdb();
 
@@ -47,6 +47,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/jobs", jobRoute);
 app.use("/api/applications", applicationRoute);
 app.use("/api/profile", profileRoute);
+
 
 /* ---------------- TEST ROUTE ---------------- */
 app.get("/", (req, res) => {

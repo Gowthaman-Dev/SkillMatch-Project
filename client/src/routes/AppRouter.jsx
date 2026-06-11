@@ -22,14 +22,11 @@ import CompanyDashboard from '../component/companyComponents/CompanyDashboard'
 import CandidateProfile from '../component/companyComponents/CandidateProfile'
 import Setting from '../component/afterRegisterComponents/Setting'
 
-
 const AppRouter = () => {
   return (
     <>
       <Routes>
-
         <Route element={<MainLayOut />}>
-
           <Route path="/" element={<BeforeRegister />} />
           <Route path='/topjobs' element={<TopJobs />} />
           <Route path='/people' element={<People />} />
@@ -54,11 +51,8 @@ const AppRouter = () => {
           <Route path='/company/postjob' element={<PostJob />} />
           <Route path='/company/myjobs' element={<MyJobs />} />
           <Route path='/company/applications' element={<Applications />} />
-
         </Route>
       </Routes>
-
-
     </>
   )
 }

@@ -1,26 +1,26 @@
-import { useNavigate } from "react-router-dom"
-import img from "../assets/undraw_interview_yz52.svg"
-import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
+import img from "../assets/undraw_interview_yz52.svg";
+import { useEffect, useState } from "react";
 
 const BeforeRegister = () => {
-  const navigate = useNavigate()
-  const [isMobile, setIsMobile] = useState(false)
+  const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const stats = [
     { number: "50K+", label: "Active Jobs", icon: "💼", trend: "+12%", color: "from-blue-500 to-cyan-500" },
     { number: "10K+", label: "Companies", icon: "🏢", trend: "+8%", color: "from-purple-500 to-pink-500" },
     { number: "2M+", label: "Job Seekers", icon: "👥", trend: "+25%", color: "from-green-500 to-emerald-500" },
     { number: "95%", label: "Success Rate", icon: "🎯", trend: "+5%", color: "from-orange-500 to-red-500" },
-  ]
+  ];
 
   const features = [
     { icon: "🎯", title: "Smart Matching", desc: "AI-powered job recommendations based on your skills and goals." },
@@ -29,20 +29,20 @@ const BeforeRegister = () => {
     { icon: "📊", title: "Track Applications", desc: "Know exactly where you stand in real-time." },
     { icon: "🔔", title: "Instant Alerts", desc: "Get notified when companies review your application." },
     { icon: "🌐", title: "Remote Friendly", desc: "Filter for remote, hybrid, or on-site roles worldwide." },
-  ]
+  ];
 
   const steps = [
     { step: "01", title: "Create Profile", desc: "Build your professional profile with skills and resume." },
     { step: "02", title: "Discover Jobs", desc: "Browse thousands of verified listings by category." },
     { step: "03", title: "Apply Instantly", desc: "One-click apply and track every application." },
     { step: "04", title: "Get Hired", desc: "Companies reach out. Land your dream job faster." },
-  ]
+  ];
 
   const testimonials = [
     { name: "Priya Sharma", role: "Engineer at Google", text: "Landed my dream job in 3 weeks. The matching algorithm is incredibly accurate.", avatar: "PS" },
     { name: "Arjun Kumar", role: "PM at Flipkart", text: "Applied to 5 companies and got 3 interviews. The profile tips were super helpful.", avatar: "AK" },
     { name: "Meera Nair", role: "Designer at Swiggy", text: "Verified companies gave me confidence. Only real opportunities, no scams.", avatar: "MN" },
-  ]
+  ];
 
   const categories = [
     { label: "IT & Software", count: "12,400+", icon: "💻" },
@@ -53,11 +53,10 @@ const BeforeRegister = () => {
     { label: "Government", count: "1,600+", icon: "🏛️" },
     { label: "Sales", count: "6,300+", icon: "📈" },
     { label: "Engineering", count: "7,500+", icon: "⚙️" },
-  ]
+  ];
 
   return (
     <div className="font-sans text-gray-900 overflow-x-hidden">
-
       {/* ===== HERO ===== */}
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 sm:px-6 py-16 sm:py-20 relative">
         <div className="absolute inset-0 opacity-30 pointer-events-none">
@@ -67,7 +66,6 @@ const BeforeRegister = () => {
         </div>
 
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center relative z-10">
-
           {/* Left */}
           <div className="space-y-5 sm:space-y-6 text-center md:text-left">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 hover:scale-105 transition-all duration-300 cursor-default">
@@ -84,26 +82,6 @@ const BeforeRegister = () => {
             </p>
 
             <div className="flex flex-col gap-3 pt-2 items-center md:items-start">
-              <button className="w-full max-w-xs sm:max-w-sm bg-white border border-gray-300 hover:border-blue-400 hover:shadow-lg active:scale-95 transition-all duration-300 py-3 rounded-full font-medium shadow-sm flex items-center justify-center gap-3 group">
-                <svg width="18" height="18" viewBox="0 0 48 48" className="flex-shrink-0 group-active:scale-90 transition-transform">
-                  <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-                  <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-                  <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-                  <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-                </svg>
-                <span className="text-sm sm:text-base">Continue with Google</span>
-              </button>
-
-              <button className="w-full max-w-xs sm:max-w-sm bg-white border border-gray-300 hover:border-blue-400 hover:shadow-lg active:scale-95 transition-all duration-300 py-3 rounded-full font-medium shadow-sm flex items-center justify-center gap-3 group">
-                <svg width="18" height="18" viewBox="0 0 21 21" className="flex-shrink-0 group-active:scale-90 transition-transform">
-                  <rect x="1" y="1" width="9" height="9" fill="#f25022"/>
-                  <rect x="11" y="1" width="9" height="9" fill="#7fba00"/>
-                  <rect x="1" y="11" width="9" height="9" fill="#00a4ef"/>
-                  <rect x="11" y="11" width="9" height="9" fill="#ffb900"/>
-                </svg>
-                <span className="text-sm sm:text-base">Continue with Microsoft</span>
-              </button>
-
               <button
                 onClick={() => navigate("/register")}
                 className="w-full max-w-xs sm:max-w-sm bg-gradient-to-r from-gray-900 to-gray-800 text-white hover:from-blue-600 hover:to-blue-700 active:scale-95 transition-all duration-300 py-3 rounded-full font-medium shadow-lg text-sm sm:text-base"
@@ -113,14 +91,17 @@ const BeforeRegister = () => {
 
               <p className="text-gray-400 text-xs sm:text-sm">
                 Already have an account?{" "}
-                <span onClick={() => navigate("/login")} className="text-gray-700 font-semibold cursor-pointer hover:text-blue-600 active:text-blue-700 transition-colors">
+                <span
+                  onClick={() => navigate("/login")}
+                  className="text-gray-700 font-semibold cursor-pointer hover:text-blue-600 active:text-blue-700 transition-colors"
+                >
                   Sign in
                 </span>
               </p>
             </div>
           </div>
 
-          {/* Right - hidden on mobile, show on md+ */}
+          {/* Right */}
           <div className="hidden md:block relative">
             <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 hover:shadow-3xl transition-all duration-500 hover:scale-105">
               <img src={img} alt="Career Illustration" className="w-full max-w-lg mx-auto" />
@@ -139,7 +120,7 @@ const BeforeRegister = () => {
             </div>
           </div>
 
-          {/* Mobile only - simple image */}
+          {/* Mobile only */}
           <div className="block md:hidden w-full max-w-xs mx-auto mt-2">
             <img src={img} alt="Career Illustration" className="w-full" />
           </div>
@@ -156,8 +137,6 @@ const BeforeRegister = () => {
 
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-
-            {/* Left text */}
             <div className="space-y-5 sm:space-y-6 md:space-y-8 text-center md:text-left">
               <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all duration-300">
                 <span className="relative flex h-2 w-2">
@@ -216,7 +195,6 @@ const BeforeRegister = () => {
               </div>
             </div>
 
-            {/* Right card */}
             <div className="relative mt-8 md:mt-0 max-w-sm mx-auto md:max-w-none w-full">
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer">
                 <div className="absolute -top-4 -left-4 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
@@ -224,7 +202,6 @@ const BeforeRegister = () => {
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
                 </div>
-
                 <div className="space-y-4 sm:space-y-6">
                   <p className="text-gray-700 text-sm sm:text-base md:text-lg italic leading-relaxed">
                     "SkillMatch transformed my career journey. Within weeks, I found a role that perfectly matched my skills and aspirations."
@@ -248,8 +225,6 @@ const BeforeRegister = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Floating elements - hidden on mobile */}
               <div className="absolute -top-6 -right-2 sm:-top-8 sm:-right-8 bg-white rounded-xl p-2 sm:p-3 shadow-lg animate-float hidden sm:block hover:scale-110 transition-all duration-300 cursor-pointer">
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 sm:w-8 sm:h-8 bg-green-100 rounded-full flex items-center justify-center">
@@ -263,7 +238,6 @@ const BeforeRegister = () => {
                   </div>
                 </div>
               </div>
-
               <div className="absolute -bottom-6 -left-2 sm:-bottom-8 sm:-left-8 bg-white rounded-xl p-2 sm:p-3 shadow-lg animate-float animation-delay-2000 hidden sm:block hover:scale-110 transition-all duration-300 cursor-pointer">
                 <div className="flex items-center gap-2">
                   <div className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-100 rounded-full flex items-center justify-center">
@@ -304,7 +278,7 @@ const BeforeRegister = () => {
             {stats.map((s, i) => (
               <div
                 key={i}
-                className={`group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl active:scale-95 transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden`}
+                className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-2xl active:scale-95 transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden"
               >
                 <div className={`absolute inset-0 bg-gradient-to-r ${s.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                 <div className="absolute inset-0.5 bg-white rounded-xl sm:rounded-2xl group-hover:bg-transparent transition-colors duration-500"></div>
@@ -423,11 +397,13 @@ const BeforeRegister = () => {
 
             {steps.map((s, i) => (
               <div key={i} className="flex flex-col items-center text-center group cursor-pointer">
-                <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-4 sm:mb-5 flex items-center justify-center text-base sm:text-lg font-bold border-2 transition-all duration-300 group-hover:scale-110 group-active:scale-95 ${
-                  i === 0
-                    ? "bg-gradient-to-r from-gray-900 to-gray-800 text-white border-gray-900 group-hover:from-blue-600 group-hover:to-blue-700"
-                    : "bg-white text-gray-400 border-gray-200 group-hover:border-blue-400 group-hover:text-blue-600"
-                }`}>
+                <div
+                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full mb-4 sm:mb-5 flex items-center justify-center text-base sm:text-lg font-bold border-2 transition-all duration-300 group-hover:scale-110 group-active:scale-95 ${
+                    i === 0
+                      ? "bg-gradient-to-r from-gray-900 to-gray-800 text-white border-gray-900 group-hover:from-blue-600 group-hover:to-blue-700"
+                      : "bg-white text-gray-400 border-gray-200 group-hover:border-blue-400 group-hover:text-blue-600"
+                  }`}
+                >
                   {s.step}
                 </div>
                 <h3 className="font-bold text-gray-800 text-sm sm:text-base mb-2 group-hover:text-blue-600 transition-colors">{s.title}</h3>
@@ -452,19 +428,28 @@ const BeforeRegister = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {testimonials.map((t, i) => (
-              <div key={i} className="bg-gradient-to-br from-gray-50 to-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-100 hover:border-blue-200 hover:shadow-2xl active:scale-95 transition-all duration-300 group cursor-pointer">
+              <div
+                key={i}
+                className="bg-gradient-to-br from-gray-50 to-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-100 hover:border-blue-200 hover:shadow-2xl active:scale-95 transition-all duration-300 group cursor-pointer"
+              >
                 <div className="flex gap-1 mb-4 sm:mb-5">
                   {[...Array(5)].map((_, j) => (
-                    <span key={j} className="text-yellow-400 text-sm sm:text-base group-hover:scale-110 transition-transform">★</span>
+                    <span key={j} className="text-yellow-400 text-sm sm:text-base group-hover:scale-110 transition-transform">
+                      ★
+                    </span>
                   ))}
                 </div>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed italic mb-4 sm:mb-6 group-hover:text-gray-700">"{t.text}"</p>
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed italic mb-4 sm:mb-6 group-hover:text-gray-700">
+                  "{t.text}"
+                </p>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center text-xs sm:text-xs font-bold text-gray-600 flex-shrink-0 group-hover:scale-110 group-active:scale-90 transition-all duration-300">
                     {t.avatar}
                   </div>
                   <div>
-                    <p className="font-bold text-gray-800 text-xs sm:text-sm m-0 group-hover:text-blue-600 transition-colors">{t.name}</p>
+                    <p className="font-bold text-gray-800 text-xs sm:text-sm m-0 group-hover:text-blue-600 transition-colors">
+                      {t.name}
+                    </p>
                     <p className="text-gray-400 text-xs m-0">{t.role}</p>
                   </div>
                 </div>
@@ -509,7 +494,9 @@ const BeforeRegister = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-8 sm:mb-12">
             <div className="col-span-2 md:col-span-1">
-              <h3 className="text-white text-lg sm:text-xl font-bold mb-3 hover:text-blue-400 transition-colors cursor-pointer">SkillMatch</h3>
+              <h3 className="text-white text-lg sm:text-xl font-bold mb-3 hover:text-blue-400 transition-colors cursor-pointer">
+                SkillMatch
+              </h3>
               <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-4">
                 India's most trusted job platform connecting talented professionals with great companies.
               </p>
@@ -520,7 +507,9 @@ const BeforeRegister = () => {
               { title: "Company", links: ["About Us", "Blog", "Privacy Policy", "Contact"] },
             ].map((col, i) => (
               <div key={i}>
-                <h4 className="text-white text-xs sm:text-sm font-bold mb-3 sm:mb-4 hover:text-blue-400 transition-colors cursor-pointer">{col.title}</h4>
+                <h4 className="text-white text-xs sm:text-sm font-bold mb-3 sm:mb-4 hover:text-blue-400 transition-colors cursor-pointer">
+                  {col.title}
+                </h4>
                 <ul className="space-y-2 sm:space-y-3 list-none p-0 m-0">
                   {col.links.map((link, j) => (
                     <li key={j}>
@@ -534,8 +523,12 @@ const BeforeRegister = () => {
             ))}
           </div>
           <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-center sm:text-left">
-            <p className="text-gray-600 text-xs sm:text-sm m-0 hover:text-gray-400 transition-colors">© 2026 SkillMatch. All rights reserved.</p>
-            <p className="text-gray-600 text-xs sm:text-sm m-0 hover:text-gray-400 transition-colors">Made with ❤️ in India</p>
+            <p className="text-gray-600 text-xs sm:text-sm m-0 hover:text-gray-400 transition-colors">
+              © 2026 SkillMatch. All rights reserved.
+            </p>
+            <p className="text-gray-600 text-xs sm:text-sm m-0 hover:text-gray-400 transition-colors">
+              Made with ❤️ in India
+            </p>
           </div>
         </div>
       </footer>
@@ -563,7 +556,7 @@ const BeforeRegister = () => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default BeforeRegister
+export default BeforeRegister;
