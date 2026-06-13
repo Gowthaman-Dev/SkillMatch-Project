@@ -125,10 +125,9 @@ const Register = () => {
       navigate("/login");
 
     } catch (error) {
-      toast.error(
-        error.response?.data?.msg || "Registration failed",
-        { position: "top-center" }
-      );
+      const errorMsg = error.response?.data?.msg || "Registration failed";
+      console.error("Register error:", error.response?.status, error.response?.data);
+      toast.error(errorMsg, { position: "top-center" });
     }
   };
 

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import api from "../../api/axios";
+
 
 const PostJob = () => {
   const navigate = useNavigate();
